@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "author": "Léo Jacquet <leojacquet2003@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
