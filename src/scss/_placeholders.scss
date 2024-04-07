@@ -1,0 +1,55 @@
+@import "./variables";
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%accent-hover {
+    transition: color 0.2s ease-in-out;
+
+    @media (pointer: fine) {
+        &:hover {
+            color: $accent;
+        }
+    }
+}
+
+%neomorph-card {
+    border: none;
+
+    background: $main-bg;
+
+    box-shadow: 8px 8px 12px -2px $neumorph-shadow-start, -6px -6px 12px -1px $neumorph-shadow-end;
+}
+
+%neomorph-button {
+    @extend %neomorph-card;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    animation: neumorphAppear 1s ease-out;
+
+    &.active {
+        box-shadow: 2px 2px 3px -0.5px $neumorph-shadow-start,
+            -1.5px -1.5px 3px -0.5px $neumorph-shadow-end;
+    }
+
+    @media (pointer: fine) {
+        &:hover {
+            color: $accent;
+
+            box-shadow: 2px 2px 3px -0.5px $neumorph-shadow-start,
+                -1.5px -1.5px 3px -0.5px $neumorph-shadow-end;
+        }
+    }
+
+    &:active {
+        box-shadow: 0 0 $neumorph-shadow-start, 0 0 $neumorph-shadow-end,
+            inset 2px 2px 8px -1px $neumorph-shadow-start,
+            inset -4px -4px 6px -1px $neumorph-shadow-end;
+    }
+}

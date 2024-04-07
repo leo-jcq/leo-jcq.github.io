@@ -1,0 +1,8 @@
+@import "./scss/normalize";
+
+.app {
+    background-color: $main-bg;
+
+    // TODO: temporaire
+    min-height: 100vh;
+}

@@ -1,0 +1,133 @@
+@import "@/scss/normalize";
+
+.header {
+    @include size(100%, 5.8rem);
+
+    background-color: $main-bg;
+
+    position: fixed;
+    top: 0;
+    z-index: 99;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 10px 100px rgba($color: $black, $alpha: 0.1);
+
+    padding: 0 1.3rem;
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
+
+        &__logo {
+            @include size(3rem);
+
+            margin-right: 0.8rem;
+        }
+
+        &__name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $text-primary;
+        }
+    }
+}
+
+.nav-bar {
+    &__open {
+        @include size(3rem);
+
+        @extend %neomorph-button;
+
+        border-radius: 50%;
+
+        &__icon {
+            @include size(40%);
+        }
+
+        @media only screen and (min-width: $tablet-width) {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include size(100%, 0);
+
+        overflow: hidden;
+
+        background-color: $main-bg;
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+
+        box-shadow: 0 5px 5px rgba($color: $black, $alpha: 0.1);
+
+        transition: height 0.5s ease-in-out;
+
+        @media only screen and (min-width: $tablet-width) {
+            @include size(fit-content);
+
+            box-shadow: none;
+
+            position: inherit;
+        }
+
+        &__list {
+            height: 17rem;
+
+            list-style-type: none;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            @media only screen and (min-width: $tablet-width) {
+                font-size: 0.8rem;
+
+                height: fit-content;
+
+                flex-direction: row;
+                gap: 1.3rem;
+            }
+
+            @media only screen and (min-width: $desktop-width) {
+                font-size: 1rem;
+
+                gap: 2rem;
+            }
+
+            &__item {
+                padding: 0 2em;
+
+                @media only screen and (min-width: $tablet-width) {
+                    padding: 0;
+                }
+
+                &__link {
+                    width: 100%;
+
+                    display: inline-block;
+
+                    font-size: 1.1em;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-align: right;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $text-primary;
+
+                    @extend %accent-hover;
+                }
+            }
+        }
+    }
+
+    &--open &__container {
+        height: 17rem;
+    }
+}
