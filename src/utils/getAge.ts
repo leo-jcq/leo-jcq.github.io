@@ -5,8 +5,6 @@ export default function getAge(birthDate: Date): number {
     const birthMonth = birthDate.getMonth();
     const birthDay = birthDate.getDate();
 
-    console.log(birthDate)
-
     // Retrieve current date
     const now = new Date();
     const currentYear = now.getFullYear();

@@ -145,8 +145,6 @@ const AboutSkills: FC = () => {
         }
     ];
 
-    console.log(typescriptIcon.type);
-
     return (
         <div className="section-about__subsection section-about__subsection--skills">
             <h2 className="section-about__subsection__title">Compétences</h2>
