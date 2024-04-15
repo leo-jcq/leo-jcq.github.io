@@ -18,6 +18,8 @@ const Hero: FC = () => {
                     Projets
                 </a>
             </div>
+
+            <span className="section-hero__mouse" />
         </section>
     );
 };
