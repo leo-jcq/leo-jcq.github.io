@@ -15,7 +15,6 @@
 :root {
     font-size: 12px;
 
-
     @media only screen and (min-width: $tablet-width) {
         font-size: 14px;
     }
@@ -34,5 +33,12 @@
     to {
         box-shadow: 8px 8px 12px -2px $neumorph-shadow-start,
             -6px -6px 12px -1px $neumorph-shadow-end;
+    }
+}
+
+@keyframes scroll {
+    to {
+        opacity: 0;
+        top: 66%;
     }
 }

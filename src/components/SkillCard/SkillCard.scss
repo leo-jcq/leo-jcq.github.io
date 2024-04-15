@@ -1,0 +1,42 @@
+@import "@/scss/normalize";
+
+.skill-card {
+    --color: #3d5360;
+
+    width: fit-content;
+
+    padding: 0.7rem 1.4rem;
+
+    border-radius: 5px;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $text-secondary;
+
+    display: flex;
+    align-items: center;
+
+    @extend %neomorph-card;
+
+    &__icon {
+        height: 1em;
+        width: fit-content;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-right: 0.5em;
+
+        transition: color 0.2s ease;
+
+        &__img,
+        & svg {
+            @include size(100%);
+        }
+    }
+
+    &:hover &__icon {
+        color: var(--color);
+    }
+}
