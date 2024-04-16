@@ -1,10 +1,11 @@
 import getAge from '@/utils/getAge';
 import { FC } from 'react';
+import { Link } from 'react-scroll';
 import './Hero.scss';
 
 const Hero: FC = () => {
     return (
-        <section id="home" className="section-hero">
+        <section id="hero" className="section-hero">
             <div className="section-hero__content">
                 <h1 className="section-hero__content__title">
                     Hey, je m'appelle
@@ -14,9 +15,15 @@ const Hero: FC = () => {
                     Je suis un jeune développeur de {getAge(new Date('2003-09-27'))} ans basé en
                     France, et je suis passionné par la création de sites web.
                 </p>
-                <a href="#about" className="section-hero__content__link">
+                <Link
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    duration={100}
+                    className="section-hero__content__link"
+                >
                     A propos de moi
-                </a>
+                </Link>
             </div>
 
             <span className="section-hero__mouse" />
