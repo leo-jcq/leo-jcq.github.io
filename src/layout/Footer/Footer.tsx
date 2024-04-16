@@ -10,7 +10,7 @@ const Footer: FC = () => {
                 <h2 className="footer__content__title">Léo Jacquet</h2>
                 <div className="footer__content__links">
                     <a
-                        href="http://"
+                        href="https://linkedin.com/in/léo-jacquet-113525257/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="footer__content__links__link"
@@ -18,7 +18,7 @@ const Footer: FC = () => {
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                     <a
-                        href="http://"
+                        href="https://github.com/leo-jcq/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="footer__content__links__link"
