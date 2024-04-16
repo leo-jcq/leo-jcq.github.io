@@ -1,0 +1,46 @@
+@import "./scss/normalize";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..800&display=swap");
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Source Sans 3", sans-serif;
+
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 12px;
+
+    @media only screen and (min-width: $tablet-width) {
+        font-size: 14px;
+    }
+
+    @media only screen and (min-width: $desktop-width) {
+        font-size: 16px;
+    }
+}
+
+@keyframes neumorphAppear {
+    from {
+        box-shadow: 2px 2px 3px -0.5px $neumorph-shadow-start,
+            -1.5px -1.5px 3px -0.5px $neumorph-shadow-end;
+    }
+
+    to {
+        box-shadow: 8px 8px 12px -2px $neumorph-shadow-start,
+            -6px -6px 12px -1px $neumorph-shadow-end;
+    }
+}
+
+@keyframes scroll {
+    to {
+        opacity: 0;
+        top: 66%;
+    }
+}
