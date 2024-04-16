@@ -9,14 +9,18 @@ interface SkillCardProps {
     name: SkillName;
 }
 
+/**
+ * The skill card component
+ *
+ * @type {FC<SkillCardProps>}
+ */
 const SkillCard: FC<SkillCardProps> = ({ name }) => {
     const { text, icon, color } = skills[name];
 
-    const style = color
-        ? {
-              '--color': color
-          }
-        : undefined;
+    // prettier-ignore
+    const style = color ? {
+        '--color': color
+    } : undefined;
 
     return (
         <div

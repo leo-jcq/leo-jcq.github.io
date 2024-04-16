@@ -3,6 +3,11 @@ import { FC } from 'react';
 import { Link } from 'react-scroll';
 import './Hero.scss';
 
+/**
+ * The hero section
+ *
+ * @type {FC}
+ */
 const Hero: FC = () => {
     return (
         <section id="hero" className="section-hero">

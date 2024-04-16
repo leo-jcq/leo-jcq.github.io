@@ -7,6 +7,11 @@ interface ExperienceProps {
     experience: ExperienceType;
 }
 
+/**
+ * The experience component
+ *
+ * @type {FC<ExperienceProps>}
+ */
 const Experience: FC<ExperienceProps> = ({
     experience: { name, description, skills, codeUri, siteUri }
 }) => {

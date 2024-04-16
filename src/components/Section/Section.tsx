@@ -7,6 +7,11 @@ interface SectionProps extends PropsWithChildren {
     description: string;
 }
 
+/**
+ * The section component
+ *
+ * @type {FC<SectionProps>}
+ */
 const Section: FC<SectionProps> = ({ name, title, description, children }) => {
     return (
         <section id={name} className={`section section-${name}`}>

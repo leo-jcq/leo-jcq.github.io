@@ -4,6 +4,11 @@ import { SkillName } from '@/types/app';
 import { FC } from 'react';
 import './About.scss';
 
+/**
+ * The about section
+ *
+ * @type {FC}
+ */
 const About: FC = () => {
     return (
         <Section
@@ -20,6 +25,11 @@ const About: FC = () => {
 
 export default About;
 
+/**
+ * The presentation subsection of the about section
+ *
+ * @type {FC}
+ */
 const AboutPresentation: FC = () => {
     return (
         <div className="section-about__subsection section-about__subsection--presentation">
@@ -53,6 +63,11 @@ const AboutPresentation: FC = () => {
     );
 };
 
+/**
+ * The skills subsection of the about section
+ *
+ * @type {FC}
+ */
 const AboutSkills: FC = () => {
     const skillNames: SkillName[] = [
         'html',

@@ -6,6 +6,11 @@ import Header from './layout/Header/Header';
 import Hero from './layout/Hero/Hero';
 import Footer from './layout/Footer/Footer';
 
+/**
+ * The root component of the app
+ *
+ * @type {FC} 
+ */
 const App: FC = () => {
     return (
         <div className="app">

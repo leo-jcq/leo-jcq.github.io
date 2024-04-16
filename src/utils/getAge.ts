@@ -1,5 +1,11 @@
+/**
+ * Get the age of a person based on his birth date
+ *
+ * @export
+ * @param {Date} birthDate The birth date of the person
+ * @return {number} The age of the person
+ */
 export default function getAge(birthDate: Date): number {
-
     // Retrieve birth date informations
     const birthYear = birthDate.getFullYear();
     const birthMonth = birthDate.getMonth();
@@ -19,5 +25,6 @@ export default function getAge(birthDate: Date): number {
         age--;
     }
 
+    // Return the age
     return age;
 }

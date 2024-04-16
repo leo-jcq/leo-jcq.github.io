@@ -4,6 +4,11 @@ import { FC } from 'react';
 import './Experiences.scss';
 import experiences from './exp';
 
+/**
+ * The experiences section
+ *
+ * @type {FC}
+ */
 const Experiences: FC = () => {
     return (
         <Section

@@ -5,6 +5,11 @@ import { FC, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import './Header.scss';
 
+/**
+ * The header component
+ *
+ * @type {FC}
+ */
 const Header: FC = () => {
     return (
         <header className="header">
@@ -20,12 +25,25 @@ const Header: FC = () => {
 
 export default Header;
 
+/**
+ * The navigation bar component
+ *
+ * @type {FC}
+ */
 const NavBar: FC = () => {
+    // Open state
     const { openState, isOpen, switchOpenState, close } = useOpen();
+
+    // Refs
     const openBtnRef = useRef<HTMLButtonElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        /**
+         * Close the nav bar if the user clicks outside of it
+         *
+         * @param {MouseEvent} e The mouse event
+         */
         function handleClickOutside(e: MouseEvent) {
             if (
                 !openBtnRef.current?.contains(e.target as Node) &&

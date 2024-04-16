@@ -21,6 +21,11 @@ import {
     faSass
 } from '@fortawesome/free-brands-svg-icons';
 
+/** 
+ * The skills
+ * 
+ * @type {Record<SkillName, Skill>}
+ */
 const skills: Record<SkillName, Skill> = {
     html: {
         text: 'HTML',
