@@ -14,8 +14,8 @@ const Hero: FC = () => {
                     Je suis un jeune développeur de {getAge(new Date('2003-09-27'))} ans basé en
                     France, et je suis passionné par la création de sites web.
                 </p>
-                <a href="#projects" className="section-hero__content__link">
-                    Projets
+                <a href="#about" className="section-hero__content__link">
+                    A propos de moi
                 </a>
             </div>
 

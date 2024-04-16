@@ -4,6 +4,7 @@ import About from './layout/About/About';
 import Experiences from './layout/Experiences/Experiences';
 import Header from './layout/Header/Header';
 import Hero from './layout/Hero/Hero';
+import Footer from './layout/Footer/Footer';
 
 const App: FC = () => {
     return (
@@ -12,6 +13,7 @@ const App: FC = () => {
             <Hero />
             <About />
             <Experiences />
+            <Footer />
         </div>
     );
 };

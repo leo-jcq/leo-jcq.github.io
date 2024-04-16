@@ -1,0 +1,71 @@
+@import "@/scss/normalize";
+
+.footer {
+    background-color: darken($color: $text-primary, $amount: 10%) ;
+
+    padding: 0 4%;
+
+    color: $main-bg;
+
+    &__content {
+        padding: 4rem 0;
+
+        @media only screen and (min-width: $tablet-width) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media only screen and (min-width: $desktop-width) {
+            padding: 5.5rem 0;
+        }
+
+        &__title {
+            margin-bottom: 1.4rem;
+
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &__links {
+            &__link {
+                width: 1.7rem;
+                aspect-ratio: 1/1;
+
+                margin-right: 0.7rem;
+
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+
+                color: $main-bg;
+
+                @extend %accent-hover;
+
+                & svg {
+                    @include size(100%)
+                }  
+            }
+        }
+    }
+
+    &__credit {
+        padding: 2.4rem 0;
+
+        border-top: 1px solid $text-primary;
+
+        font-size: 0.8rem;
+        text-align: center;
+
+        @media only screen and (min-width: $desktop-width) {
+            padding: 2.7rem 0;
+        }
+
+        &__link {
+            font-weight: 700;
+            color: $main-bg;
+
+            @extend %accent-hover;
+        }
+    }
+}
