@@ -73,39 +73,5 @@
                 gap: 1.4rem;
             }
         }
-
-        & .skill-card {
-            &--vitest,
-            &--postman,
-            &--gitlab {
-                & path {
-                    transition: fill 0.2s ease;
-                }
-
-                &:not(:hover) path {
-                    fill: $text-secondary;
-                }
-            }
-
-            &--figma {
-                & use {
-                    transition: fill 0.2s ease;
-                }
-
-                &:not(:hover) use {
-                    fill: $text-secondary;
-                }
-            }
-
-            &--net {
-                & rect {
-                    transition: fill 0.2s ease;
-                }
-
-                &:not(:hover) rect {
-                    fill: $text-secondary;
-                }
-            }
-        }
     }
 }

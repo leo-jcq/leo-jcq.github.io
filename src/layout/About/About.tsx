@@ -1,24 +1,6 @@
-import {
-    csharpIcon,
-    dotNetIcon,
-    figmaLogo,
-    gitLabLogo,
-    postmanLogo,
-    typescriptIcon,
-    vitestLogo
-} from '@/assets/assets';
 import Section from '@/components/Section/Section';
-import SkillCard, { SkillCardProps } from '@/components/SkillCard/SkillCard';
-import {
-    faCss3,
-    faGitAlt,
-    faGithub,
-    faHtml5,
-    faJs,
-    faNodeJs,
-    faReact,
-    faSass
-} from '@fortawesome/free-brands-svg-icons';
+import SkillCard from '@/components/SkillCard/SkillCard';
+import skills, { SkillName } from '@/components/SkillCard/skills';
 import { FC } from 'react';
 import './About.scss';
 
@@ -72,86 +54,15 @@ const AboutPresentation: FC = () => {
 };
 
 const AboutSkills: FC = () => {
-    const skills: SkillCardProps[] = [
-        {
-            text: 'HTML',
-            icon: faHtml5,
-            color: '#f91111'
-        },
-        {
-            text: 'CSS',
-            icon: faCss3,
-            color: '#2392f4'
-        },
-        {
-            text: 'SCSS',
-            icon: faSass,
-            color: '#ff0074'
-        },
-        {
-            text: 'JavaScript',
-            icon: faJs,
-            color: '#ffd62C'
-        },
-        {
-            text: 'TypeScript',
-            icon: typescriptIcon,
-            color: '#0077d0'
-        },
-        {
-            text: 'React',
-            icon: faReact,
-            color: '#00c0d5'
-        },
-        {
-            text: 'Node.js',
-            icon: faNodeJs,
-            color: '#6cd853'
-        },
-        {
-            text: 'CSharp',
-            icon: csharpIcon,
-            color: '#0077d0'
-        },
-        {
-            text: '.NET',
-            icon: dotNetIcon
-        },
-        {
-            text: 'Git',
-            icon: faGitAlt,
-            color: '#fb0000'
-        },
-        {
-            text: 'GitHub',
-            icon: faGithub,
-            color: '#4d6e7a'
-        },
-        {
-            text: 'GitLab',
-            icon: gitLabLogo
-        },
-        {
-            text: 'Vitest',
-            icon: vitestLogo
-        },
-        {
-            text: 'Figma',
-            icon: figmaLogo
-        },
-        {
-            text: 'Postman',
-            icon: postmanLogo
-        }
-    ];
+    const skillNames = Object.keys(skills) as SkillName[];
 
     return (
         <div className="section-about__subsection section-about__subsection--skills">
             <h2 className="section-about__subsection__title">Compétences</h2>
 
             <div className="section-about__subsection__skills">
-                {skills.map((skill) => (
-                    <SkillCard key={skill.text} {...skill} />
+                {skillNames.map((skillName) => (
+                    <SkillCard key={skillName} name={skillName} />
                 ))}
             </div>
         </div>

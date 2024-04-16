@@ -2,14 +2,15 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSProperties, FC } from 'react';
 import './SkillCard.scss';
+import skills, { SkillName } from './skills';
 
-export interface SkillCardProps {
-    text: string;
-    icon?: IconProp | JSX.Element;
-    color?: string;
+interface SkillCardProps {
+    name: SkillName;
 }
 
-const SkillCard: FC<SkillCardProps> = ({ text, icon, color }) => {
+const SkillCard: FC<SkillCardProps> = ({ name }) => {
+    const { text, icon, color } = skills[name];
+
     const style = color
         ? {
               '--color': color
@@ -18,7 +19,7 @@ const SkillCard: FC<SkillCardProps> = ({ text, icon, color }) => {
 
     return (
         <div
-            className={`skill-card skill-card--${text.trim().replace(' ', '_').replace('.', '').toLowerCase()}`}
+            className={`skill-card skill-card--${name} skill-card--${color ? 'fa' : 'custom'}`}
             style={style as CSSProperties}
         >
             {icon && (

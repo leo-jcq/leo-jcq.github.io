@@ -18,6 +18,38 @@
 
     @extend %neomorph-card;
 
+    &--custom:not(&--figma) {
+        & path,
+        & use,
+        & rect {
+            transition: fill 0.2s ease;
+        }
+
+        &:not(:hover) path,
+        &:not(:hover) use,
+        &:not(:hover) rect {
+            fill: $text-secondary;
+        }
+    }
+
+    &--figma {
+        & use {
+            transition: fill 0.2s ease;
+        }
+
+        &:not(:hover) use {
+            fill: $text-secondary;
+        }
+    }
+
+    &--fa &__icon {
+        transition: color 0.2s ease;
+    }
+
+    &--fa:hover &__icon {
+        color: var(--color);
+    }
+
     &__icon {
         height: 1em;
         width: fit-content;
@@ -28,15 +60,9 @@
 
         margin-right: 0.5em;
 
-        transition: color 0.2s ease;
-
         &__img,
         & svg {
             @include size(100%);
         }
-    }
-
-    &:hover &__icon {
-        color: var(--color);
     }
 }
