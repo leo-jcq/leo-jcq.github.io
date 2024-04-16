@@ -1,5 +1,8 @@
 @import "@/scss/normalize";
 
-path.transparent {
-    fill: $main-bg !important;
+path,
+rect {
+    &.transparent {
+        fill: $main-bg !important;
+    }
 }

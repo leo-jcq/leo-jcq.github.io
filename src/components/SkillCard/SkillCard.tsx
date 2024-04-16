@@ -1,8 +1,9 @@
+import { SkillName } from '@/types/app';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSProperties, FC } from 'react';
 import './SkillCard.scss';
-import skills, { SkillName } from './skills';
+import skills from './skills';
 
 interface SkillCardProps {
     name: SkillName;

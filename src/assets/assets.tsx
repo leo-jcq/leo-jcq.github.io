@@ -5,12 +5,12 @@ export const typescriptIcon = (
         <g clip-path="url(#clip0_403_4)">
             <path
                 d="M0 0H24V24H0V0ZM14.28 19.8133C14.9467 21.12 16.2933 22.12 18.4 22.12C20.5333 22.12 22.1333 21.0133 22.1333 18.9733C22.1333 17.0933 21.0533 16.2533 19.1333 15.4267L18.5733 15.1867C17.6 14.7733 17.1867 14.4933 17.1867 13.8267C17.1867 13.28 17.6 12.8533 18.2667 12.8533C18.9067 12.8533 19.3333 13.1333 19.72 13.8267L21.4667 12.6667C20.7333 11.3867 19.6933 10.8933 18.2667 10.8933C16.2533 10.8933 14.96 12.1733 14.96 13.8667C14.96 15.7067 16.04 16.5733 17.6667 17.2667L18.2267 17.5067C19.2667 17.96 19.88 18.24 19.88 19.0133C19.88 19.6533 19.28 20.12 18.3467 20.12C17.24 20.12 16.6 19.5467 16.12 18.7467L14.28 19.8133ZM13.3333 11H6.66667V13H8.66667V22.6667H11V13H13.3333V11Z"
-                fill="currentColor"
+                fill="#0077d0"
             />
         </g>
         <defs>
             <clipPath id="clip0_403_4">
-                <rect width="24" height="24" fill="white" />
+                <rect className="transparent" width="24" height="24" fill="white" />
             </clipPath>
         </defs>
     </svg>
@@ -20,12 +20,12 @@ export const csharpIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
         <path
             d="M14,24A8,8,0,1,1,14,8h6V2H14A14,14,0,0,0,0,15.99994V16A14,14,0,0,0,14,30h6V24Z"
-            fill="currentColor"
+            fill="#0077d0"
         />
-        <rect x="22" y="10" width="2" height="12" fill="currentColor" />
-        <rect x="28" y="10" width="2" height="12" fill="currentColor" />
-        <rect x="20" y="12" width="12" height="2" fill="currentColor" />
-        <rect x="20" y="18" width="12" height="2" fill="currentColor" />
+        <rect x="22" y="10" width="2" height="12" fill="#0077d0" />
+        <rect x="28" y="10" width="2" height="12" fill="#0077d0" />
+        <rect x="20" y="12" width="12" height="2" fill="#0077d0" />
+        <rect x="20" y="18" width="12" height="2" fill="#0077d0" />
     </svg>
 );
 
@@ -223,6 +223,16 @@ export const dotNetIcon = (
             className="transparent"
             d="M392.667 187.695H359.457V289.515H340.272V187.695H307.143V171H392.667V187.695Z"
             fill="white"
+        />
+    </svg>
+);
+
+export const vbIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <path
+            xmlns="http://www.w3.org/2000/svg"
+            d="M22.00046,11.80005,16.3004,16.384l5.70006,4.41606V11.80005M7.24,23.68017,4,21.64014V10.84l3.6-1.2,5.16006,3.996L23.2,4,28,7.00005V25.6L22,28l-9.192-8.808L7.24,23.68m.36-5.28007,2.232-2.064L7.6,14.19984Z"
+            fill="#ab47bc"
         />
     </svg>
 );

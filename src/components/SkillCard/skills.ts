@@ -5,8 +5,10 @@ import {
     gitLabLogo,
     postmanLogo,
     typescriptIcon,
+    vbIcon,
     vitestLogo
 } from '@/assets/assets';
+import { Skill, SkillName } from '@/types/app';
 import {
     faCss3,
     faGitAlt,
@@ -14,9 +16,9 @@ import {
     faHtml5,
     faJs,
     faNodeJs,
+    faPhp,
     faReact,
-    faSass,
-    IconDefinition
+    faSass
 } from '@fortawesome/free-brands-svg-icons';
 
 const skills: Record<SkillName, Skill> = {
@@ -55,7 +57,7 @@ const skills: Record<SkillName, Skill> = {
         color: '#6cd853'
     },
     csharp: {
-        text: 'CSharp',
+        text: 'C#',
         icon: csharpIcon
     },
     dotnet: {
@@ -87,35 +89,16 @@ const skills: Record<SkillName, Skill> = {
     postman: {
         text: 'Postman',
         icon: postmanLogo
+    },
+    vb: {
+        text: 'VB',
+        icon: vbIcon
+    },
+    php: {
+        text: 'PHP',
+        icon: faPhp,
+        color: '#006be4'
     }
 };
 
 export default skills;
-
-// prettier-ignore
-export type Skill = {
-    text: string;
-    icon?: JSX.Element;
-    color?: undefined;
-} | {
-    text: string;
-    icon?: IconDefinition;
-    color?: string;
-}
-
-export type SkillName =
-    | 'html'
-    | 'css'
-    | 'scss'
-    | 'js'
-    | 'ts'
-    | 'react'
-    | 'node'
-    | 'csharp'
-    | 'dotnet'
-    | 'git'
-    | 'github'
-    | 'gitlab'
-    | 'vitest'
-    | 'figma'
-    | 'postman';

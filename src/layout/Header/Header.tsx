@@ -41,8 +41,8 @@ const NavBar: FC = () => {
                         </a>
                     </li>
                     <li className="nav-bar__container__list__item">
-                        <a href="#projects" className="nav-bar__container__list__item__link">
-                            Projets
+                        <a href="#experiences" className="nav-bar__container__list__item__link">
+                            Expériences
                         </a>
                     </li>
                     <li className="nav-bar__container__list__item">

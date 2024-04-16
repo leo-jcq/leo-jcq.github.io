@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import './App.scss';
 import About from './layout/About/About';
+import Experiences from './layout/Experiences/Experiences';
 import Header from './layout/Header/Header';
 import Hero from './layout/Hero/Hero';
 
@@ -10,6 +11,7 @@ const App: FC = () => {
             <Header />
             <Hero />
             <About />
+            <Experiences />
         </div>
     );
 };

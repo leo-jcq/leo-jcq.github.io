@@ -1,6 +1,6 @@
 import Section from '@/components/Section/Section';
 import SkillCard from '@/components/SkillCard/SkillCard';
-import skills, { SkillName } from '@/components/SkillCard/skills';
+import { SkillName } from '@/types/app';
 import { FC } from 'react';
 import './About.scss';
 
@@ -54,7 +54,23 @@ const AboutPresentation: FC = () => {
 };
 
 const AboutSkills: FC = () => {
-    const skillNames = Object.keys(skills) as SkillName[];
+    const skillNames: SkillName[] = [
+        'html',
+        'css',
+        'scss',
+        'js',
+        'ts',
+        'react',
+        'node',
+        'csharp',
+        'dotnet',
+        'git',
+        'github',
+        'gitlab',
+        'vitest',
+        'figma',
+        'postman'
+    ];
 
     return (
         <div className="section-about__subsection section-about__subsection--skills">
