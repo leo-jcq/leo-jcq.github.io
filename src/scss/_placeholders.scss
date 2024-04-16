@@ -33,7 +33,7 @@
 
     animation: neumorphAppear 1s ease-out;
 
-    &.active {
+    &--active {
         box-shadow: 2px 2px 3px -0.5px $neumorph-shadow-start,
             -1.5px -1.5px 3px -0.5px $neumorph-shadow-end;
     }

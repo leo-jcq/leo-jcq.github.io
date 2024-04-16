@@ -72,6 +72,8 @@
         @media only screen and (min-width: $tablet-width) {
             @include size(fit-content);
 
+            overflow: visible;
+
             box-shadow: none;
 
             position: inherit;
@@ -120,7 +122,40 @@
                     text-decoration: none;
                     text-transform: uppercase;
                     color: $text-primary;
+
                     @extend %accent-hover;
+
+                    @media only screen and (min-width: $tablet-width) {
+                        height: 3rem;
+
+                        background: $main-bg;
+
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        padding: 1rem 2.4rem;
+
+                        box-shadow: 8px 8px 12px -2px $neumorph-shadow-start,
+                            -6px -6px 12px -1px $neumorph-shadow-end;
+
+                        border-radius: 3rem;
+
+                        transition: all 0.25s ease;
+
+                        @media (pointer: fine) {
+                            &:hover {
+                                box-shadow: 2px 2px 3px -0.5px $neumorph-shadow-start,
+                                    -1.5px -1.5px 3px -0.5px $neumorph-shadow-end;
+                            }
+                        }
+
+                        &:active {
+                            box-shadow: 0 0 $neumorph-shadow-start, 0 0 $neumorph-shadow-end,
+                                inset 2px 2px 8px -1px $neumorph-shadow-start,
+                                inset -4px -4px 6px -1px $neumorph-shadow-end;
+                        }
+                    }
                 }
             }
         }
