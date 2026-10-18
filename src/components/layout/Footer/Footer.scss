@@ -1,0 +1,29 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.footer {
+    min-height: 110px;
+
+    display: flex;
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5625rem;
+
+    font-family: v.$font-heading;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: v.$text-secondary;
+
+    @include m.respond-sm {
+        flex-direction: column;
+        gap: 0.75rem;
+
+        padding: 2.125rem 1.25rem;
+    }
+
+    &__logo {
+        height: 2.5rem;
+    }
+}

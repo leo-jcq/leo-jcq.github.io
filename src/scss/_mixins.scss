@@ -1,0 +1,76 @@
+@use "./variables" as v;
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin transition($property: all, $duration: v.$transitions-duration) {
+    transition: $property $duration ease-out;
+}
+
+@mixin transition-group($properties...) {
+    transition-property: $properties;
+    transition-duration: v.$transitions-duration;
+    transition-timing-function: ease-out;
+}
+
+@mixin primary-btn($small: false) {
+    border: 1px solid v.$accent;
+    border-radius: 4px;
+    outline: none;
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    @if $small {
+        padding: 0.5rem 1.125rem;
+    } @else {
+        padding: 1.25rem 1.75rem;
+    }
+
+    background-color: v.$bg;
+
+    font-family: v.$font-heading;
+    @if $small {
+        font-size: 0.8125rem;
+    } @else {
+        font-size: 0.875rem;
+    }
+    text-decoration: none;
+    color: v.$accent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    @include transition-group(background-color, color, gap);
+
+    &:hover {
+        gap: 2.5rem;
+
+        background-color: v.$accent;
+
+        color: v.$bg;
+    }
+}
+
+@mixin outline-text($color) {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1.5px $color;
+}
+
+@mixin respond-md {
+    @media (max-width: v.$bp-md) {
+        @content;
+    }
+}
+
+@mixin respond-sm {
+    @media (max-width: v.$bp-sm) {
+        @content;
+    }
+}

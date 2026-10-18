@@ -1,0 +1,35 @@
+@use "@/scss/variables" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:root {
+    font-size: 16px;
+}
+
+html {
+    scrollbar-color: v.$accent v.$bg;
+}
+
+body {
+    font-family: v.$font-primary;
+    font-optical-sizing: auto;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smothing: grayscale;
+
+    scroll-behavior: smooth;
+}

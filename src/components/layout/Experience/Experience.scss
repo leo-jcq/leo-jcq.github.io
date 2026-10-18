@@ -1,0 +1,113 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.experience {
+    min-height: 290px;
+
+    display: grid;
+    gap: 54px;
+    grid-template-columns: 210px 1fr;
+
+    @include m.respond-sm {
+        gap: 34px;
+        grid-template-columns: 1fr;
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+
+        @include m.respond-sm {
+            flex-direction: row;
+
+            overflow-x: auto;
+        }
+
+        &__tab {
+            display: flex;
+            gap: 0.8125rem;
+
+            padding: 1.0625rem 1.25rem;
+
+            background-color: transparent;
+
+            border: none;
+            border-left: 1px solid v.$line;
+
+            font-family: v.$font-heading;
+            font-size: 0.8125rem;
+            text-align: left;
+            color: v.$text-secondary;
+
+            cursor: pointer;
+
+            @include m.transition-group(0.25s, background, color, border-color);
+
+            @include m.respond-sm {
+                flex: 0 0 auto;
+
+                border: {
+                    bottom: 1px solid v.$line;
+                    left: none;
+                }
+            }
+
+            &:hover,
+            &--active {
+                background-color: v.$surface;
+
+                color: var(--section-color);
+            }
+
+            &--active {
+                border-color: var(--section-color);
+            }
+
+            &__number {
+                font-size: 0.625rem;
+                color: #5e6273;
+            }
+        }
+    }
+
+    &__panel {
+        &__title {
+            margin: 0.25rem 0 0.5rem;
+
+            font-family: v.$font-heading;
+            font-size: 1.375rem;
+            font-weight: 500;
+
+            &__company {
+                color: var(--section-color);
+            }
+        }
+
+        &__date {
+            margin: 0 0 30px;
+
+            font-family: v.$font-heading;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            color: v.$text-secondary;
+        }
+
+        &__points {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+
+            padding-left: 1em;
+
+            &__point {
+                font-size: 0.9375rem;
+                line-height: 1.65;
+                color: v.$text-secondary;
+
+                &::marker {
+                    color: var(--section-color);
+                }
+            }
+        }
+    }
+}

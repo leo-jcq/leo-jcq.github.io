@@ -1,0 +1,91 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.contact {
+    max-width: 780px;
+
+    margin: 60px auto 80px;
+    padding: 120px 0;
+
+    text-align: center;
+
+    scroll-margin-top: 40px;
+
+    @include m.respond-sm {
+        margin: 30px auto 50px;
+        padding: 90px 0;
+    }
+
+    &__heading {
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+
+        font-family: v.$font-heading;
+        font-size: 1rem;
+        font-weight: 500;
+
+        &__number {
+            color: v.$accent;
+        }
+
+        &__title {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+    }
+
+    &__subtitle {
+        margin: 1.375rem 0 1.625rem;
+
+        font-family: v.$font-heading;
+        font-size: clamp(2.625rem, 6vw, 4.375rem);
+        font-weight: 600;
+        letter-spacing: -0.055em;
+        line-height: 1.05;
+
+        &__emphasis {
+            @include m.outline-text(v.$orange);
+        }
+    }
+
+    &__text {
+        max-width: 570px;
+
+        margin: 0 auto;
+
+        color: v.$text-secondary;
+        line-height: 1.75;
+    }
+
+    &__link {
+        position: relative;
+
+        text-decoration: none;
+        color: v.$accent;
+
+        &::after {
+            content: "";
+
+            @include m.size(0, 1px);
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: unset;
+
+            background-color: currentColor;
+
+            transition: width 0.25s ease-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+                right: unset;
+                left: 0;
+            }
+        }
+    }
+}

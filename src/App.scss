@@ -1,0 +1,25 @@
+@use "@/scss/mixins" as m;
+@use "./scss/variables" as v;
+
+.app {
+    min-height: 100vh;
+
+    background-color: v.$bg;
+
+    color: v.$text-primary;
+
+    &__main {
+        max-width: 1160px;
+
+        margin: 0 auto;
+        padding: 0 80px;
+
+        @include m.respond-md {
+            padding: 0 48px;
+        }
+
+        @include m.respond-sm {
+            padding: 0 24px;
+        }
+    }
+}

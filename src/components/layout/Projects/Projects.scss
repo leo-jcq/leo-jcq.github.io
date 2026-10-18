@@ -1,0 +1,23 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.projects {
+    display: grid;
+    gap: 130px;
+
+    @include m.respond-sm {
+        gap: 90px;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__action {
+        @include m.primary-btn(true);
+    }
+}

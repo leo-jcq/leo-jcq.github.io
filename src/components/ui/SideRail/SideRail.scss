@@ -1,0 +1,33 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.side-rail {
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.125rem;
+
+    &--left {
+        left: 3vw;
+    }
+
+    &--right {
+        right: 3vw;
+    }
+
+    @include m.respond-md() {
+        display: none;
+    }
+
+    &::after {
+        content: "";
+
+        @include m.size(1px, 90px);
+
+        background-color: v.$text-secondary;
+    }
+}

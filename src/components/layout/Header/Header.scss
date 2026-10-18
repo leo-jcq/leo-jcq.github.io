@@ -1,0 +1,173 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.header {
+    @include m.size(100%, 6.25rem);
+
+    position: fixed;
+    z-index: 50;
+    top: 0;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 3.125rem;
+
+    background: rgba(v.$bg, 0.5);
+    backdrop-filter: blur(8px);
+
+    font-family: v.$font-heading;
+
+    @include m.transition(color);
+
+    @include m.respond-sm {
+        height: 4rem;
+
+        padding: 0 1.5rem;
+    }
+
+    &__logo {
+        &__img {
+            height: 3rem;
+        }
+    }
+
+    &__nav-bar {
+        font-size: 0.75rem;
+
+        &,
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+
+        &__list {
+            list-style: none;
+
+            @include m.respond-sm {
+                @include m.size(0, 100vh);
+
+                position: fixed;
+                z-index: 55;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+
+                overflow: hidden;
+
+                flex-direction: column;
+                gap: 3.75rem;
+                justify-content: center;
+
+                background-color: v.$surface;
+
+                font-size: 1rem;
+
+                transition: width 0.8s ease, gap 0.8s ease;
+            }
+
+            &__item {
+                width: max-content;
+
+                margin: 0 0.3125rem;
+
+                &__link {
+                    padding: 0.625rem;
+
+                    cursor: pointer;
+
+                    letter-spacing: 0.03em;
+                    text-decoration: none;
+
+                    @include m.transition(color);
+                }
+
+                &:hover &__link {
+                    color: #fff;
+                }
+            }
+        }
+
+        &--open &__list {
+            width: 100%;
+
+            gap: 1.875rem;
+        }
+
+        &__resume {
+            width: 4.8125rem;
+
+            margin-left: 0.9375rem;
+
+            letter-spacing: 2px;
+
+            @include m.primary-btn(true);
+        }
+
+        &__btn {
+            display: none;
+
+            @include m.respond-sm {
+                @include m.size(2.125rem, 2.5rem);
+
+                display: flex;
+                gap: 7px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+
+                margin-left: 1.5rem;
+
+                position: relative;
+                z-index: 60;
+
+                border: none;
+                outline: none;
+
+                background-color: transparent;
+
+                padding: 0;
+
+                cursor: pointer;
+
+                &::before,
+                &::after {
+                    content: "";
+
+                    height: 2px;
+
+                    @include m.transition-group(transform, width, color);
+                }
+
+                &::before {
+                    width: 27px;
+
+                    background-color: v.$pink;
+                }
+
+                &::after {
+                    width: 19px;
+
+                    background-color: v.$orange;
+                }
+
+                &--open {
+                    &::before {
+                        transform: translateY(4.5px) rotate(45deg);
+                    }
+
+                    &::after {
+                        width: 27px;
+
+                        transform: translateY(-4.5px) rotate(-45deg);
+
+                        background-color: v.$pink;
+                    }
+                }
+            }
+        }
+    }
+}

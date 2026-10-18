@@ -1,0 +1,191 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+@mixin right {
+    .project-display--right & {
+        @content;
+    }
+}
+
+.project-display {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    grid-row: 1fr;
+    align-items: center;
+
+    @include m.respond-md {
+        grid-template-columns: 1fr 0.85fr;
+    }
+
+    @include m.respond-sm {
+        display: block;
+    }
+
+    &--right {
+        grid-template-columns: 0.82fr 1.18fr;
+
+        @include m.respond-md {
+            grid-template-columns: 0.85fr 1fr;
+        }
+    }
+
+    &__visual {
+        min-width: 0;
+
+        position: relative;
+        z-index: 1;
+
+        @include right {
+            grid-column: 2;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+
+            transition: opacity 0.3s linear;
+        }
+
+        &__img {
+            width: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 0.125rem;
+        }
+
+        &__number {
+            position: absolute;
+            z-index: 3;
+            bottom: -1.75rem;
+            left: 1.25rem;
+
+            font-family: v.$font-heading;
+            font-size: 4.875rem;
+            font-weight: 700;
+            line-height: 1;
+            color: v.$line;
+
+            pointer-events: none;
+
+            @include m.respond-sm {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        text-align: right;
+
+        @include right {
+            grid-row: 1;
+            grid-column: 1;
+
+            text-align: left;
+        }
+
+        @include m.respond-sm {
+            text-align: left;
+        }
+    }
+
+    &__title {
+        margin: 0.5rem 0 1.25rem;
+
+        font-family: v.$font-heading;
+        font-size: clamp(1.75rem, 4vw, 2.625rem);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+    }
+
+    &__description {
+        position: relative;
+        z-index: 3;
+
+        margin: 0 0 1.5rem -4.5rem;
+        padding: 1.5rem;
+
+        background-color: v.$surface-raised;
+
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+
+        font-size: 0.875rem;
+        line-height: 1.7;
+        color: v.$text-secondary;
+
+        border-radius: 0.25rem;
+
+        @include right {
+            margin: 0 -4.5rem 1.5rem 0;
+        }
+
+        @include m.respond-sm {
+            margin: 0 0 1.5rem !important;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        gap: 1.125rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        font-family: v.$font-heading;
+        font-size: 0.75rem;
+        color: v.$text-secondary;
+
+        list-style: none;
+
+        @include right {
+            justify-content: flex-start;
+        }
+
+        @include m.respond-sm {
+            justify-content: flex-start;
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.125rem;
+        margin-top: 1.5rem;
+
+        @include right {
+            justify-content: flex-start;
+        }
+
+        @include m.respond-sm {
+            justify-content: flex-start;
+        }
+
+        &__link {
+            width: 1.125rem;
+
+            text-decoration: none;
+            color: v.$text-primary;
+
+            @include m.transition-group(color, transform);
+            transition-duration: 0.18s;
+
+            &:hover {
+                color: var(--section-color);
+
+                transform: translateY(-2px);
+            }
+        }
+    }
+}

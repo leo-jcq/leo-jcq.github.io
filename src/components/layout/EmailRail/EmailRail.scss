@@ -1,0 +1,21 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.email-rail {
+    &__link {
+        font-family: v.$font-heading;
+        font-size: 0.6875rem;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        writing-mode: vertical-lr;
+        color: v.$text-secondary;
+
+        @include m.transition-group(0.25s, color, transform);
+
+        &:hover {
+            color: v.$pink;
+
+            transform: translateY(-3px);
+        }
+    }
+}

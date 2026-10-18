@@ -1,0 +1,52 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.section {
+    padding: 130px 0;
+
+    scroll-margin-top: 70px;
+
+    @include m.respond-sm {
+        padding: 90px 0;
+    }
+
+    &__heading {
+        display: flex;
+        gap: 0.8125rem;
+        align-items: center;
+
+        margin-bottom: 62px;
+
+        font-family: v.$font-heading;
+
+        @include m.respond-sm {
+            margin-bottom: 44px;
+        }
+
+        &::after {
+            content: "";
+
+            @include m.size(min(28vw, 280px), 1px);
+
+            margin-left: 10px;
+
+            background-color: v.$line;
+
+            @include m.respond-sm {
+                flex: 1;
+            }
+        }
+
+        &__index {
+            font-size: 0.875rem;
+
+            color: var(--section-color);
+        }
+
+        &__title {
+            font-size: clamp(1.6875rem, 3vw, 2.25rem);
+            font-weight: 600;
+            letter-spacing: -0.03rem;
+        }
+    }
+}

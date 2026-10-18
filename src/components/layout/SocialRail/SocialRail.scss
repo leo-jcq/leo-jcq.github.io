@@ -1,0 +1,16 @@
+@use "@/scss/mixins" as m;
+@use "@/scss/variables" as v;
+
+.social-rail {
+    &__link {
+        color: v.$text-secondary;
+
+        @include m.transition-group(0.25s, color, transform);
+
+        &:hover {
+            color: v.$pink;
+
+            transform: translateY(-3px);
+        }
+    }
+}
