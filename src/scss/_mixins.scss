@@ -6,13 +6,13 @@
 }
 
 @mixin transition($property: all, $duration: v.$transitions-duration) {
-    transition: $property $duration ease-out;
+    transition: $property $duration v.$transitions-timing-function;
 }
 
 @mixin transition-group($properties...) {
     transition-property: $properties;
     transition-duration: v.$transitions-duration;
-    transition-timing-function: ease-out;
+    transition-timing-function: v.$transitions-timing-function;
 }
 
 @mixin primary-btn($small: false) {
@@ -57,10 +57,10 @@
     }
 }
 
-@mixin outline-text($color) {
+@mixin outline-text($color, $stroke-width: 1.5px) {
     font-style: normal;
     color: transparent;
-    -webkit-text-stroke: 1.5px $color;
+    -webkit-text-stroke: $stroke-width $color;
 }
 
 @mixin respond-md {

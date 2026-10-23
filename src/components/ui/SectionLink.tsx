@@ -1,3 +1,4 @@
+import useMediaQuery from '@/hooks/useMediaQuery';
 import type { PropsWithChildren } from 'react';
 import { Link } from 'react-scroll';
 import type { ReactScrollLinkProps } from 'react-scroll/modules/components/Link';
@@ -21,12 +22,16 @@ function SectionLink({
     children,
     ...props
 }: SectionLink) {
+    const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+
+    const finalDuration = prefersReducedMotion ? 0 : duration;
+
     return (
         <Link
             {...props}
             spy={spy}
             smooth={smooth}
-            duration={duration}
+            duration={finalDuration}
             className={className}
             title={title}
         >

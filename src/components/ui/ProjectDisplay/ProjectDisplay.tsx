@@ -1,3 +1,5 @@
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useMobileSize from '@/hooks/useMobileSize';
 import type { Project } from '@/types/app';
 import { ExternalLink as ExternalLinkIcon, GitHub as GitHubIcon } from 'react-feather';
 import ExternalLink from '../ExternalLink';
@@ -12,6 +14,11 @@ function ProjectDisplay({
     project: { title, description, tags, image, links },
     index
 }: ProjectDisplayProps) {
+    const isMobile = useMobileSize();
+    const [containerRef, isVisible] = useIntersectionObserver({
+        threshold: isMobile ? 0.25 : 0.5
+    });
+
     const alignment = index % 2 === 0 ? 'left' : 'right';
 
     const ImageWrapper = links.live ? ExternalLink : 'div';
@@ -19,7 +26,10 @@ function ProjectDisplay({
     const displayedNumber = index + 1;
 
     return (
-        <article className={`project-display project-display--${alignment}`}>
+        <article
+            ref={containerRef}
+            className={`project-display project-display--${alignment}${isVisible ? ' project-display--visible' : ''}`}
+        >
             <ImageWrapper href={links.live} className="project-display__visual">
                 <img
                     src={`/projects/${image}`}

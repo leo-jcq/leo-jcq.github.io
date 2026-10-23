@@ -11,6 +11,11 @@
     align-items: center;
     gap: 1.125rem;
 
+    opacity: 0;
+
+    $delay: v.$animations-duration * 2 + v.$animations-delay * 3;
+    animation: v.$animations-duration ease-out $delay forwards fade-in;
+
     &--left {
         left: 3vw;
     }

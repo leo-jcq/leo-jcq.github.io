@@ -7,6 +7,20 @@
     grid-template-columns: 1.3fr 0.7fr;
     align-items: center;
 
+    opacity: 0;
+
+    transform: translateY(2rem);
+
+    transition:
+        opacity v.$animations-duration v.$animations-timing-function,
+        transform v.$animations-duration v.$animations-timing-function;
+
+    &--visible {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
     @include m.respond-md {
         gap: 50px;
     }

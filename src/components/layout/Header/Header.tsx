@@ -6,12 +6,12 @@ import { useEffect, useState } from 'react';
 import './Header.scss';
 
 /**
- * Renders the header of the application.
+ * The header of the application.
  *
  * @export
  */
 function Header() {
-    // Open/close
+    // Open/close state
     const [isOpen, setIsOpen] = useState(false);
 
     const openState = isOpen ? 'open' : 'close';

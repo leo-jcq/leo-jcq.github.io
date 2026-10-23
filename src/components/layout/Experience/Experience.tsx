@@ -1,5 +1,7 @@
 import Section from '@/components/ui/Section';
 import experiences from '@/data/experiences';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useMobileSize from '@/hooks/useMobileSize';
 import type { Experience as ExperienceType } from '@/types/app';
 import { useState } from 'react';
 import './Experience.scss';
@@ -8,13 +10,21 @@ const getTabId = (experience: ExperienceType) =>
     `experience-tab-${experience.company.replaceAll(' ', '-')}`;
 
 function Experience() {
+    // Animation
+    const isMobile = useMobileSize();
+
+    const [containerRef, isVisible] = useIntersectionObserver({
+        threshold: isMobile ? 0.5 : 0.75
+    });
+
+    // Tab selection
     const [activeIndex, setActiveIndex] = useState(0);
 
     const activeExperience = experiences[activeIndex];
 
     return (
-        <Section id="experience" index={2} title="Expérience">
-            <div className="experience">
+        <Section ref={containerRef} id="experience" index={2} title="Expérience">
+            <div className={`experience${isVisible ? ' experience--visible' : ''}`}>
                 <div className="experience__tabs" role="tablist" aria-label="Expériences">
                     {experiences.map((experience, index) => (
                         <button
@@ -32,6 +42,7 @@ function Experience() {
                 </div>
 
                 <div
+                    key={activeIndex}
                     className="experience__panel"
                     role="tabpanel"
                     aria-labelledby={getTabId(activeExperience)}

@@ -12,7 +12,16 @@
 
     @media (prefers-reduced-motion: reduce) {
         scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
     }
 }
 
@@ -32,4 +41,41 @@ body {
     -moz-osx-font-smothing: grayscale;
 
     scroll-behavior: smooth;
+}
+
+/*** Animations ***/
+@keyframes slide-up {
+    0% {
+        transform: translateY(2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes grow-x {
+    from {
+        width: 0;
+    }
 }

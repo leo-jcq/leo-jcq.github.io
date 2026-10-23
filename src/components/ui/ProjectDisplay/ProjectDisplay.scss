@@ -1,8 +1,16 @@
 @use "@/scss/mixins" as m;
 @use "@/scss/variables" as v;
 
+$animations-duration: v.$animations-duration / 2;
+
 @mixin right {
     .project-display--right & {
+        @content;
+    }
+}
+
+@mixin visible {
+    .project-display--visible & {
         @content;
     }
 }
@@ -37,8 +45,22 @@
         position: relative;
         z-index: 1;
 
+        opacity: 0;
+
+        transform: translateY(2rem);
+
+        transition:
+            opacity $animations-duration v.$animations-timing-function,
+            transform $animations-duration v.$animations-timing-function;
+
         @include right {
             grid-column: 2;
+        }
+
+        @include visible {
+            opacity: 1;
+
+            transform: translateY(0);
         }
 
         &:hover {
@@ -77,9 +99,10 @@
             font-size: 4.875rem;
             font-weight: 700;
             line-height: 1;
-            color: v.$line;
 
-            pointer-events: none;
+            @include m.outline-text(var(--section-color), 2px);
+
+            user-select: none;
 
             @include m.respond-sm {
                 display: none;
@@ -109,6 +132,20 @@
         font-size: clamp(1.75rem, 4vw, 2.625rem);
         font-weight: 600;
         letter-spacing: -0.04em;
+
+        opacity: 0;
+
+        transform: translateY(2rem);
+
+        transition:
+            opacity $animations-duration v.$animations-timing-function (v.$animations-delay * 2),
+            transform $animations-duration v.$animations-timing-function (v.$animations-delay * 2);
+
+        @include visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
     }
 
     &__description {
@@ -128,11 +165,24 @@
 
         border-radius: 0.25rem;
 
+        clip-path: inset(-60px -60px -60px 100%);
+        
+        transition: clip-path $animations-duration v.$animations-timing-function
+            ($animations-duration + v.$animations-delay * 2);
+
         @include right {
             margin: 0 -4.5rem 1.5rem 0;
+
+            clip-path: inset(-60px 100% -60px -60px);
+        }
+
+        @include visible {
+            clip-path: inset(-60px);
         }
 
         @include m.respond-sm {
+            clip-path: inset(-60px 100% -60px -60px);
+
             margin: 0 0 1.5rem !important;
         }
     }
@@ -149,8 +199,22 @@
 
         list-style: none;
 
+        opacity: 0;
+
+        transform: translateY(2rem);
+
+        transition:
+            opacity $animations-duration v.$animations-timing-function (v.$animations-delay * 4),
+            transform $animations-duration v.$animations-timing-function (v.$animations-delay * 4);
+
         @include right {
             justify-content: flex-start;
+        }
+
+        @include visible {
+            opacity: 1;
+
+            transform: translateY(0);
         }
 
         @include m.respond-sm {
@@ -164,8 +228,22 @@
         gap: 1.125rem;
         margin-top: 1.5rem;
 
+        opacity: 0;
+
+        transform: translateY(2rem);
+
+        transition:
+            opacity $animations-duration v.$animations-timing-function (v.$animations-delay * 4),
+            transform $animations-duration v.$animations-timing-function (v.$animations-delay * 4);
+
         @include right {
             justify-content: flex-start;
+        }
+
+        @include visible {
+            opacity: 1;
+
+            transform: translateY(0);
         }
 
         @include m.respond-sm {

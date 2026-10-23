@@ -1,6 +1,8 @@
 import portrait from '@/assets/imgs/portrait.png';
 import Section from '@/components/ui/Section';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import './About.scss';
+import useMobileSize from '@/hooks/useMobileSize';
 
 const TECHS = [
     'TypeScript',
@@ -13,9 +15,15 @@ const TECHS = [
 ];
 
 function About() {
+    const isMobile = useMobileSize();
+
+    const [containerRef, isVisible] = useIntersectionObserver({
+        threshold: isMobile ? 0.5 : 0.75
+    });
+
     return (
-        <Section id="about" index={1} title="À propos">
-            <div className="about">
+        <Section ref={containerRef} id="about" index={1} title="À propos">
+            <div className={`about${isVisible ? ' about--visible' : ''}`}>
                 <div className="about__copy">
                     <p className="about__copy__text">
                         J’aime construire des applications à la rencontre du{' '}

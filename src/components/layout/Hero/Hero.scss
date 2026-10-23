@@ -10,6 +10,19 @@
     justify-content: center;
     align-items: flex-start;
 
+    $base-delay: v.$resume-button-delay + v.$animations-duration;
+
+    &__kicker,
+    &__title,
+    &__text,
+    &__link {
+        opacity: 0;
+
+        animation:
+            v.$animations-duration v.$animations-timing-function slide-up,
+            v.$animations-duration v.$animations-timing-function forwards fade-in;
+    }
+
     &__kicker {
         display: flex;
         gap: 0.75rem;
@@ -22,6 +35,12 @@
         font-weight: 500;
         letter-spacing: 0.04em;
         color: v.$accent;
+
+        animation-delay: $base-delay;
+
+        @include m.respond-sm {
+            animation-delay: v.$animations-duration;
+        }
 
         &::before {
             content: "";
@@ -42,8 +61,12 @@
         line-height: 0.98;
         color: v.$text-primary;
 
+        animation-delay: $base-delay + v.$animations-delay;
+
         @include m.respond-sm {
             font-size: clamp(44px, 13.7vw, 68px);
+
+            animation-delay: v.$animations-duration + v.$animations-delay;
         }
 
         &__emphasis {
@@ -59,9 +82,21 @@
         font-size: 1.125rem;
         line-height: 1.75;
         color: v.$text-secondary;
+
+        animation-delay: $base-delay + v.$animations-delay * 2;
+
+        @include m.respond-sm {
+            animation-delay: v.$animations-duration + v.$animations-delay * 2;
+        }
     }
 
     &__link {
         @include m.primary-btn();
+
+        animation-delay: $base-delay + v.$animations-delay * 3;
+
+        @include m.respond-sm {
+            animation-delay: v.$animations-duration + v.$animations-delay * 3;
+        }
     }
 }

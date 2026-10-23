@@ -1,10 +1,22 @@
 import ExternalLink from '@/components/ui/ExternalLink';
 import socials from '@/data/socials';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useMobileSize from '@/hooks/useMobileSize';
 import './Contact.scss';
 
 function Contact() {
+    const isMobile = useMobileSize();
+
+    const [containerRef, isVisible] = useIntersectionObserver({
+        threshold: isMobile ? 0.5 : 0.75
+    });
+
     return (
-        <section id="contact" className="contact">
+        <section
+            ref={containerRef}
+            id="contact"
+            className={`contact${isVisible ? ' contact--visible' : ''}`}
+        >
             <div className="contact__heading">
                 <span className="contact__heading__number">04</span>
                 <h2 className="contact__heading__title">Et maintenant ?</h2>

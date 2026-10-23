@@ -26,3 +26,11 @@ $bp-sm: 700px;
 // Transitions
 $transitions-timing-function: ease-out;
 $transitions-duration: 0.25s;
+
+// Animations
+$animations-timing-function: ease-out;
+$animations-duration: 0.8s;
+$animations-delay: 0.1s;
+
+$nb-nav-bar-links: 4;
+$resume-button-delay: ($nb-nav-bar-links + 1) * $animations-delay;

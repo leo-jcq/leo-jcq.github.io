@@ -11,9 +11,23 @@
 
     scroll-margin-top: 40px;
 
+    opacity: 0;
+
+    transform: translateY(2rem);
+
+    transition:
+        opacity v.$animations-duration v.$animations-timing-function,
+        transform v.$animations-duration v.$animations-timing-function;
+
     @include m.respond-sm {
         margin: 30px auto 50px;
         padding: 90px 0;
+    }
+
+    &--visible {
+        opacity: 1;
+
+        transform: translateY(0);
     }
 
     &__heading {
