@@ -14,6 +14,7 @@ interface SectionLink extends ReactScrollLinkProps, PropsWithChildren {
  * @export
  */
 function SectionLink({
+    to,
     spy = true,
     smooth = true,
     duration = 500,
@@ -24,16 +25,19 @@ function SectionLink({
 }: SectionLink) {
     const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
+    const finalSmooth = smooth && !prefersReducedMotion;
     const finalDuration = prefersReducedMotion ? 0 : duration;
 
     return (
         <Link
+            to={to}
             {...props}
             spy={spy}
-            smooth={smooth}
+            smooth={finalSmooth}
             duration={finalDuration}
             className={className}
             title={title}
+            href={`#${to}`}
         >
             {children}
         </Link>
