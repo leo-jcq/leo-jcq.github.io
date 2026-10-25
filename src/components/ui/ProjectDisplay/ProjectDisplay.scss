@@ -1,7 +1,7 @@
 @use "@/scss/mixins" as m;
 @use "@/scss/variables" as v;
 
-$animations-duration: v.$animations-duration / 2;
+$animations-duration: calc(v.$animations-duration / 2);
 
 @mixin right {
     .project-display--right & {
@@ -166,7 +166,7 @@ $animations-duration: v.$animations-duration / 2;
         border-radius: 0.25rem;
 
         clip-path: inset(-60px -60px -60px 100%);
-        
+
         transition: clip-path $animations-duration v.$animations-timing-function
             ($animations-duration + v.$animations-delay * 2);
 
