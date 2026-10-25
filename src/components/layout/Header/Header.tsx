@@ -33,7 +33,12 @@ function Header() {
     return (
         <header className="header">
             <SectionLink to="hero" className="header__logo">
-                <img src="/logo.svg" alt="Logo" className="header__logo__img" />
+                <img
+                    src="/logo.svg"
+                    alt="Logo"
+                    className="header__logo__img"
+                    fetchPriority="high"
+                />
             </SectionLink>
 
             <nav
